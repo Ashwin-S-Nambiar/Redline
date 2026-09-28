@@ -75,7 +75,7 @@ export default async function ReleasePage({ params }) {
   return (
     <div className="page">
       <main className="min-w-0">
-        <div className="flex items-center justify-between gap-3 border-b border-graphite px-2 py-2 min-[720px]:pl-[68px]">
+        <div className="flex items-center justify-between gap-3 border-b border-graphite px-2 py-2 min-[720px]:pl-17">
           <Link href={`/${slug}`} className="btn quiet">
             <Back size={16} />
             {project.name}
@@ -99,7 +99,7 @@ export default async function ReleasePage({ params }) {
             </div>
             <div className="min-w-0 min-[720px]:px-4">
               <p className="flex flex-wrap items-baseline gap-x-2.5">
-                <span className="letter text-[13px] tracking-[0.1em] text-lead">
+                <span className="letter text-[13px] tracking-widest text-lead">
                   {project.name}
                 </span>
                 <span className="mono text-[13px] font-semibold">
@@ -185,7 +185,7 @@ export default async function ReleasePage({ params }) {
         <Footer />
       </main>
       <aside className="side end" aria-label={`About ${project.name}`}>
-        <div className="only-wide grid gap-4 px-[22px] pt-6">
+        <div className="only-wide grid gap-4 px-5.5 pt-6">
           <h2 className="caption">This drawing</h2>
           <p className="text-[13.5px] leading-normal text-pretty text-lead">
             {project.blurb}

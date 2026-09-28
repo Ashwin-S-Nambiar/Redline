@@ -31,7 +31,7 @@ export default async function Home() {
         <Footer />
       </main>
       <aside className="side" aria-label="About this changelog">
-        <div className="only-wide grid gap-6 px-[22px] pt-6">
+        <div className="only-wide grid gap-6 px-5.5 pt-6">
           <p className="text-[13.5px] leading-normal text-lead">
             <b className="font-semibold text-graphite">How to read this.</b>{' '}
             Each project is a drawing. Every release adds a revision, numbered

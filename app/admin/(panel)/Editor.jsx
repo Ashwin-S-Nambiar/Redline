@@ -317,7 +317,7 @@ export default function Editor({ projects, release, defaultProject }) {
         </label>
       </div>
 
-      <div className="grid content-start gap-4 border-t border-graphite p-4 min-[1000px]:sticky min-[1000px]:top-[58px] min-[1000px]:border-t-0 min-[720px]:p-6">
+      <div className="grid content-start gap-4 border-t border-graphite p-4 min-[1000px]:sticky min-[1000px]:top-14.5 min-[1000px]:border-t-0 min-[720px]:p-6">
         <h2 className="caption">Preview</h2>
         <div className="border-y border-graphite">
           <Revision
