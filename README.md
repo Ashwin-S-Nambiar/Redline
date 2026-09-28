@@ -67,8 +67,8 @@ the page is an engineering drawing.
 ## running it
 
 ```sh
-git clone https://github.com/Ashwin-S-Nambiar/Quillify.git
-cd Quillify
+git clone https://github.com/Ashwin-S-Nambiar/Redline.git
+cd Redline
 npm install
 ```
 
