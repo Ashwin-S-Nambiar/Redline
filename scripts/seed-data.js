@@ -8,8 +8,8 @@ export const projects = [
     formerly: ['Quillify'],
     blurb: 'What changed in everything I build, and when.',
     url: 'https://redline.ashwin.co.in',
-    repo: gh('Quillify'),
-    note: note('Quillify'),
+    repo: gh('Redline'),
+    note: note('Redline'),
   },
   {
     slug: 'blogspace',
@@ -471,7 +471,7 @@ export const releases = [
     version: '2.0',
     date: '2026-09-28',
     title: 'Quillify is now Redline',
-    commits: [],
+    commits: ['95e1e17', '81b81d7'],
     changes: [
       A(
         'A changelog for everything I build, with a page and a feed for each project.',
