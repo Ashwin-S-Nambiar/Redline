@@ -6,7 +6,7 @@ export const projects = [
     slug: 'redline',
     name: 'Redline',
     formerly: ['Quillify'],
-    blurb: 'What changed in everything I build, and when.',
+    blurb: 'Selected changes across my projects, and when they happened.',
     url: 'https://redline.ashwin.co.in',
     repo: gh('Redline'),
     note: note('Redline'),
@@ -474,7 +474,7 @@ export const releases = [
     commits: ['95e1e17', '81b81d7'],
     changes: [
       A(
-        'A changelog for everything I build, with a page and a feed for each project.',
+        'A curated changelog for my projects, with a page and a feed for each one.',
       ),
       A(
         'The newest change is circled in red, the way changes are marked on a drawing.',
@@ -484,5 +484,81 @@ export const releases = [
     ],
     notes:
       'Quillify was a blog, and so is BlogSpace. Two blogs was one too many, so this one became the place that keeps track of the rest.',
+  },
+  {
+    project: 'tenzies',
+    version: '1.1',
+    date: '2025-02-13',
+    title: 'Dice faces and a roll count',
+    commits: ['4c1871a', '1d33fc5'],
+    changes: [
+      C('Dice show pips instead of numerals.'),
+      A('A roll count and a final score after each game.'),
+    ],
+  },
+  {
+    project: 'fandeck',
+    version: '1.1',
+    date: '2025-02-08',
+    title: 'Palettes you can share',
+    commits: ['2b01e4b'],
+    changes: [
+      A(
+        'A share link that opens the same five-color palette for someone else.',
+      ),
+    ],
+  },
+  {
+    project: 'stampbook',
+    version: '1.1',
+    date: '2025-02-25',
+    title: 'Tags for trips',
+    commits: ['abb4796'],
+    changes: [
+      A('Tags to group trips.'),
+      A('A dark mode switch and a loading state.'),
+    ],
+  },
+  {
+    project: 'quizzme',
+    version: '1.1',
+    date: '2025-05-01',
+    title: 'An error you can read',
+    commits: ['4836ce7'],
+    changes: [
+      F(
+        'A failed question request now shows an error message instead of leaving you waiting.',
+      ),
+    ],
+  },
+  {
+    project: 'portfolio',
+    version: '2.0',
+    date: '2025-12-07',
+    title: 'The second portfolio',
+    commits: ['b6d3fa5'],
+    changes: [
+      A(
+        'A new site built with Next.js, with projects, experience and the rest of my work in one place.',
+      ),
+      A('An admin panel to edit the portfolio content.'),
+    ],
+    notes:
+      'The first portfolio stays on the v1 branch. This version lives on v2.',
+  },
+  {
+    project: 'portfolio',
+    version: '3.0',
+    date: '2026-08-26',
+    title: 'A third way through the work',
+    commits: ['fa92d1f'],
+    changes: [
+      A(
+        'A new portfolio with a moving project carousel and a page for each project.',
+      ),
+      A('Project clips that play as you explore.'),
+    ],
+    notes:
+      'This version lives on the v3 branch. The earlier sites remain on v1 and v2.',
   },
 ];

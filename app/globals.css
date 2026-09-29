@@ -22,12 +22,6 @@
   --ease-drawer: cubic-bezier(0.32, 0.72, 0, 1);
 }
 
-@property --sweep {
-  syntax: "<angle>";
-  inherits: false;
-  initial-value: 360deg;
-}
-
 :root {
   --rule: color-mix(in oklab, var(--color-graphite) 28%, transparent);
   --rule-soft: color-mix(in oklab, var(--color-graphite) 16%, transparent);
@@ -83,10 +77,9 @@ body > * {
 }
 
 .letter {
-  font-family: var(--font-letter);
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  font-weight: 400;
+  font-family: var(--font-body);
+  letter-spacing: -0.025em;
+  font-weight: 600;
 }
 
 .mono {
@@ -247,6 +240,19 @@ body > * {
   align-items: start;
 }
 
+@media (min-width: 1100px) {
+  .page-intro {
+    min-height: 272px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .side:not(.end) .titleblock {
+    grid-template-rows: 88px 106px 53px 53px;
+  }
+}
+
 .rail {
   position: sticky;
   top: var(--edge);
@@ -271,9 +277,8 @@ body > * {
 }
 
 .caption {
-  font: 400 11px / 1 var(--font-letter);
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
+  font: 600 12px / 1.2 var(--font-body);
+  letter-spacing: 0.02em;
   color: var(--color-lead);
 }
 
@@ -288,9 +293,8 @@ body > * {
 }
 
 .drawings a .nm {
-  font: 400 15px / 1.2 var(--font-letter);
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
+  font: 600 15px / 1.2 var(--font-body);
+  letter-spacing: 0;
   transition: transform 180ms var(--ease-out);
 }
 
@@ -305,10 +309,10 @@ body > * {
   position: absolute;
   left: -14px;
   top: 50%;
-  width: 8px;
+  width: 7px;
   height: 7px;
   background: var(--color-redline);
-  clip-path: polygon(50% 0, 100% 100%, 0 100%);
+  border-radius: 50%;
   translate: 0 -50%;
   opacity: 0;
   scale: 0.6;
@@ -425,9 +429,8 @@ body > * {
   z-index: 5;
   background: var(--color-film);
   border-bottom: 1.5px solid var(--color-graphite);
-  font: 400 11px / 1 var(--font-letter);
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
+  font: 600 12px / 1.2 var(--font-body);
+  letter-spacing: 0.02em;
   color: var(--color-lead);
 }
 
@@ -501,16 +504,15 @@ body > * {
   border-image: url("/cloud.svg") 12 / 18px / 0 round;
   pointer-events: none;
   z-index: 3;
-  mask: conic-gradient(from 300deg, #000 var(--sweep), transparent 0);
-  animation: sweep 760ms cubic-bezier(0.45, 0.05, 0.3, 1) 180ms both;
+  animation: cloud-in 220ms var(--ease-out) both;
 }
 
-@keyframes sweep {
+@keyframes cloud-in {
   from {
-    --sweep: 0deg;
+    opacity: 0;
   }
   to {
-    --sweep: 360deg;
+    opacity: 1;
   }
 }
 
@@ -519,7 +521,7 @@ body > * {
   overflow: visible;
 }
 
-.delta path {
+.delta circle {
   fill: none;
   stroke: currentColor;
   stroke-width: 1.5;
@@ -533,9 +535,8 @@ body > * {
 }
 
 .kind {
-  font: 400 10.5px / 20px var(--font-letter);
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
+  font: 600 11.5px / 20px var(--font-body);
+  letter-spacing: 0;
   color: var(--color-lead);
 }
 
@@ -651,16 +652,14 @@ body > * {
 .titleblock .lbl {
   display: block;
   margin-bottom: 5px;
-  font: 400 9.5px / 1 var(--font-letter);
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
+  font: 600 11px / 1.2 var(--font-body);
+  letter-spacing: 0.02em;
   color: var(--color-lead);
 }
 
 .titleblock .val {
-  font: 400 15px / 1.15 var(--font-letter);
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
+  font: 500 15px / 1.2 var(--font-body);
+  letter-spacing: 0;
 }
 
 .titleblock .val.mono {
@@ -679,9 +678,8 @@ body > * {
   display: flex;
   align-items: center;
   gap: 12px;
-  font: 400 36px / 1 var(--font-letter);
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
+  font: 600 30px / 1.05 var(--font-body);
+  letter-spacing: -0.025em;
   overflow-wrap: anywhere;
 }
 
@@ -783,9 +781,8 @@ select.input {
 }
 
 .toast .t {
-  font: 400 11px / 1 var(--font-letter);
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
+  font: 600 12px / 1.2 var(--font-body);
+  letter-spacing: 0.02em;
   color: var(--color-nonrepro);
 }
 
@@ -848,13 +845,28 @@ select.input {
 }
 
 ::view-transition-group(.morph) {
-  animation-duration: 320ms;
+  animation-duration: 220ms;
   animation-timing-function: var(--ease-out);
 }
 
-::view-transition-old(root),
+::view-transition-old(root) {
+  animation: 100ms var(--ease-out) both page-out;
+}
+
 ::view-transition-new(root) {
-  animation-duration: 180ms;
+  animation: 180ms var(--ease-out) both page-in;
+}
+
+@keyframes page-out {
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes page-in {
+  from {
+    opacity: 0;
+  }
 }
 
 @media (max-width: 1099px) {

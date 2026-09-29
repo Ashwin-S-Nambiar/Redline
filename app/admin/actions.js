@@ -1,7 +1,7 @@
 'use server';
 
 import bcrypt from 'bcryptjs';
-import { revalidatePath } from 'next/cache';
+import { revalidatePath, updateTag } from 'next/cache';
 import { cookies } from 'next/headers';
 import { redirect } from 'next/navigation';
 import { db, KINDS } from '@/lib/db';
@@ -14,7 +14,10 @@ async function requireAdmin() {
   return db();
 }
 
-const refresh = () => revalidatePath('/', 'layout');
+const refresh = () => {
+  updateTag('redline-rows');
+  revalidatePath('/', 'layout');
+};
 
 export async function login(_prev, form) {
   const email = String(form.get('email') ?? '').trim();

@@ -7,7 +7,9 @@ import Register from '@/components/Register';
 import TitleBlock from '@/components/TitleBlock';
 import { kindCounts } from '@/lib/counts';
 import { getAll, getProject } from '@/lib/data';
+import { formatDate } from '@/lib/format';
 import { projectCells } from '@/lib/project-cells';
+import { projectIcon } from '@/lib/project-icons';
 
 export async function generateStaticParams() {
   const { projects } = await getAll();
@@ -21,7 +23,7 @@ export async function generateMetadata({ params }) {
   const { project } = found;
   return {
     title: project.name,
-    description: `Every release of ${project.name}, with what was added, changed, fixed and removed.`,
+    description: `Selected revisions of ${project.name}, with what was added, changed, fixed and removed.`,
     alternates: {
       canonical: `/${slug}`,
       types: {
@@ -42,7 +44,7 @@ export default async function ProjectPage({ params }) {
   return (
     <div className="page">
       <main className="min-w-0">
-        <header className="border-b border-graphite px-4 pt-6 pb-5 min-[720px]:pt-8 min-[720px]:pr-6 min-[720px]:pb-7 min-[720px]:pl-20">
+        <header className="page-intro border-b border-graphite px-4 pt-6 pb-5 min-[720px]:pt-8 min-[720px]:pr-6 min-[720px]:pb-7 min-[720px]:pl-20">
           <h1 className="letter text-[32px] leading-none min-[720px]:text-[44px]">
             {project.name}
           </h1>
@@ -55,6 +57,20 @@ export default async function ProjectPage({ params }) {
             </p>
           ) : null}
           <p className="mt-2.5 max-w-[56ch] text-pretty">{project.blurb}</p>
+          {releases.length ? (
+            <p className="mt-3 text-[13px] leading-normal text-lead">
+              {releases.length} selected{' '}
+              {releases.length === 1 ? 'revision' : 'revisions'} here, from{' '}
+              <time dateTime={project.first.date.slice(0, 10)}>
+                {formatDate(project.first.date)}
+              </time>{' '}
+              to{' '}
+              <time dateTime={project.latest.date.slice(0, 10)}>
+                {formatDate(project.latest.date)}
+              </time>
+              . The code has the full commit history.
+            </p>
+          ) : null}
           <ProjectLinks project={project} className="mt-4" />
         </header>
         {releases.length ? (
@@ -77,6 +93,7 @@ export default async function ProjectPage({ params }) {
         <div className="mt-auto">
           <TitleBlock
             name={project.name}
+            icon={projectIcon(project.slug)}
             description={project.blurb}
             cells={projectCells(project)}
           />

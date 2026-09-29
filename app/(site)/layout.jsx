@@ -1,5 +1,6 @@
 import Frame from '@/components/Frame';
 import MobileHead from '@/components/MobileHead';
+import NavigationTransitions from '@/components/NavigationTransitions';
 import Rail from '@/components/Rail';
 import Toaster from '@/components/Toaster';
 import { getAll } from '@/lib/data';
@@ -10,7 +11,7 @@ export default async function SiteLayout({ children }) {
     .filter((p) => p.count > 0)
     .sort((a, b) => releases.indexOf(a.latest) - releases.indexOf(b.latest));
   return (
-    <>
+    <NavigationTransitions>
       <Frame />
       <div className="sheet">
         <MobileHead projects={list} total={releases.length} />
@@ -20,6 +21,6 @@ export default async function SiteLayout({ children }) {
         </div>
       </div>
       <Toaster />
-    </>
+    </NavigationTransitions>
   );
 }

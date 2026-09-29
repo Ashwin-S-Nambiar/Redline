@@ -44,9 +44,6 @@ export default function Follow({ project, reserve = false }) {
           <Row label="Project" path="/project/feed.xml" ghost />
         ) : null}
       </ul>
-      <p className="text-xs leading-snug text-lead">
-        Atom feeds. Copy one into any feed reader.
-      </p>
     </section>
   );
 }

@@ -1,10 +1,10 @@
 'use client';
 
+import Image from 'next/image';
 import Link from 'next/link';
-import { useSelectedLayoutSegment } from 'next/navigation';
+import { useRouter, useSelectedLayoutSegment } from 'next/navigation';
 import { useCallback, useState } from 'react';
 import { KIND_LABEL } from '@/lib/format';
-import Delta from './Delta';
 import Drawings from './Drawings';
 import Follow from './Follow';
 import { Down, Feed } from './Icons';
@@ -12,9 +12,16 @@ import { useOnly } from './Legend';
 import Sheet from './Sheet';
 
 export default function MobileHead({ projects, total }) {
+  const router = useRouter();
   const [sheet, setSheet] = useState({ open: false, kind: 'drawings' });
   const close = useCallback(() => setSheet((s) => ({ ...s, open: false })), []);
-  const show = (kind) => setSheet({ open: true, kind });
+  const show = (kind) => {
+    if (kind === 'drawings') {
+      router.prefetch('/');
+      for (const item of projects) router.prefetch(`/${item.slug}`);
+    }
+    setSheet({ open: true, kind });
+  };
   const current = useSelectedLayoutSegment();
   const project = projects.find((p) => p.slug === current);
   const only = useOnly();
@@ -22,7 +29,7 @@ export default function MobileHead({ projects, total }) {
     <>
       <header className="mhead">
         <Link href="/" className="flex items-center gap-2.5 px-4">
-          <Delta size={22} className="text-redline" />
+          <Image src="/icon.svg" alt="" width={34} height={34} unoptimized />
           <span className="letter text-[25px] leading-none">Redline</span>
         </Link>
         <button

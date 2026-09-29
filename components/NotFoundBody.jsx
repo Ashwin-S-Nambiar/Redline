@@ -22,7 +22,7 @@ export default function NotFoundBody() {
             </span>
           </div>
           <Link href="/" className="btn solid mt-8">
-            See every revision
+            See the revisions
           </Link>
         </div>
         <Footer />

@@ -7,7 +7,7 @@ import {
   KIND_LABEL,
   releasePath,
 } from '@/lib/format';
-import Delta from './Delta';
+import RevisionMark from './RevisionMark';
 
 export default function Revision({
   r,
@@ -16,6 +16,7 @@ export default function Revision({
   latest = false,
   limit = 3,
   preview = false,
+  activeTransition = false,
 }) {
   const more = Math.max(0, r.changes.length - limit);
   const title = preview ? (
@@ -26,20 +27,23 @@ export default function Revision({
     </Link>
   );
   return (
-    <article className={`rev ${latest ? 'cloud latest' : ''}`}>
+    <article
+      className={`rev ${latest ? 'cloud latest' : ''}`}
+      data-release-id={r.id}
+    >
       <div className="cell flex justify-center">
         <ViewTransition
-          name={preview ? undefined : `delta-${r.id}`}
+          name={!preview && activeTransition ? `delta-${r.id}` : undefined}
           share="morph"
           default="none"
         >
-          <Delta n={r.rev} className={latest ? 'text-redline' : ''} />
+          <RevisionMark n={r.rev} />
         </ViewTransition>
       </div>
       <div className="cell">
         <div className="flex items-baseline gap-2.5">
           {showProject ? (
-            <span className="letter text-[13px] leading-none tracking-[0.1em] text-lead">
+            <span className="letter text-[13px] leading-none text-lead">
               {r.name}
             </span>
           ) : null}
@@ -49,7 +53,7 @@ export default function Revision({
         </div>
         <h2 className="mt-2 mb-2.5 text-[19px] leading-tight font-bold tracking-[-0.005em] text-balance">
           <ViewTransition
-            name={preview ? undefined : `title-${r.id}`}
+            name={!preview && activeTransition ? `title-${r.id}` : undefined}
             share="morph"
             default="none"
           >

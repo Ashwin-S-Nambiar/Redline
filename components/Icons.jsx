@@ -36,6 +36,12 @@ export const Copy = (p) => (
   </Icon>
 );
 
+export const DrawingsIcon = (p) => (
+  <Icon {...p}>
+    <path d="M5 7h11v13H5zM8 4h11v13" />
+  </Icon>
+);
+
 export const Out = (p) => (
   <Icon {...p}>
     <path d="M8 16 17 7M9 7h8v8" />

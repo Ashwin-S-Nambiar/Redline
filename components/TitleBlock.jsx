@@ -1,17 +1,30 @@
-import Delta from './Delta';
+import Image from 'next/image';
+import { DrawingsIcon } from './Icons';
 
 export default function TitleBlock({
   name,
   description,
   cells,
   className = '',
+  icon,
 }) {
   return (
     <div className={`titleblock ${className}`}>
       <div className="wide">
         <span className="lbl">Title</span>
         <span className="name">
-          <Delta size={30} className="shrink-0 text-redline" />
+          {icon ? (
+            <Image
+              src={icon}
+              alt=""
+              width={38}
+              height={38}
+              className="shrink-0"
+              unoptimized
+            />
+          ) : (
+            <DrawingsIcon size={38} className="shrink-0" />
+          )}
           {name}
         </span>
       </div>

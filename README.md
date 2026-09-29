@@ -16,23 +16,23 @@
 
 <br>
 
-the source of **[redline.ashwin.co.in](https://redline.ashwin.co.in)**, the changelog for everything i build. every release of every project, newest first, with what was added, changed, fixed and removed.
+the source of **[redline.ashwin.co.in](https://redline.ashwin.co.in)**, a changelog of selected changes across my projects, newest first, with what was added, changed, fixed and removed. each project page shows how many revisions are recorded and the dates they cover; github has the full commit history.
 
 this used to be quillify, a blog. blogspace is also a blog, and two was one too many, so this one became the place that keeps track of the rest. what each project is lives in [my notes](https://notes.ashwin.co.in); what changed and when lives here.
 
 ## what it does
 
 <p align="center">
-  <img src="./docs/screenshots/Redline-2.webp" width="32%" alt="redline on a phone: the header with the red delta and the feed button, the project picker, and the newest revision circled in red">
+  <img src="./docs/screenshots/Redline-2.webp" width="32%" alt="redline on a phone: the icon and feed button, the project picker, and the newest revision circled in red">
   &nbsp;
-  <img src="./docs/screenshots/Redline-3.webp" width="32%" alt="the drawing list sheet on a phone, with tenzies marked in red and each project's current version">
+  <img src="./docs/screenshots/Redline-3.webp" width="32%" alt="the project list sheet on a phone, with all projects marked in red and each project's current version">
   &nbsp;
   <img src="./docs/screenshots/Redline-4.webp" width="32%" alt="a revision page on a phone: stampbook 2.0, travel journal is now stampbook, with its changes grouped under added, changed and removed">
 </p>
 
-- **every project is a drawing.** each one has its own page with what it is, links to the live site, the code and the notes, and every revision it has had.
-- **every release is a revision.** a number in a triangle, a version, a date, a title and the changes, sorted into added, changed, fixed and removed. commits link to github.
-- **the newest one is clouded.** the latest revision gets a red revision cloud that draws itself round it, the way changes are marked on a drawing.
+- **every project is a drawing.** each one has its own page with what it is, links to the live site, the code and the notes, and its selected revisions.
+- **each entry is a revision.** a number in a circle, a version, a date, a title and the changes, sorted into added, changed, fixed and removed. commits link to github.
+- **the newest one is clouded.** the latest revision gets a red revision cloud that appears quickly, the way changes are marked on a drawing.
 - **show only what you want.** tap added, changed, fixed or removed to see just those changes, across every project or one.
 - **feeds.** an atom feed for everything and one for each project. copy the link into any feed reader.
 - **keys.** `j` and `k` step through revisions, `enter` opens one, and on a revision `j` and `k` go older and newer while `esc` goes back up.
@@ -44,8 +44,8 @@ the page is an engineering drawing.
 
 - **the sheet.** a frame with zone numbers along the edges, drafting film with a pale blue grid, and a title block in the corner with the name, who drew it and when it was last revised.
 - **the register.** the revision table from the corner of a drawing, grown into the whole page: rev, description, date.
-- **redlining.** on a drawing, changes are marked in red pencil, circled in a scalloped cloud, and tagged with a numbered triangle. that red is the only colour here.
-- **type.** osifont, the lettering of technical drawings, for names and labels. atkinson hyperlegible next for everything you read. azeret mono for versions, dates and commits.
+- **redlining.** on a drawing, changes are marked in red pencil and circled in a scalloped cloud. revision numbers stay graphite so the cloud marks the latest change.
+- **type.** atkinson hyperlegible next for names, labels and reading. osifont stays on the frame's zone marks and revision numbers. azeret mono handles versions, dates and commits.
 - **no dark mode.** drawings are on film.
 - **every screen.** a full sheet on desktop, a narrower sheet on tablets, and on phones the frame goes and the drawing list becomes a sheet you pull up.
 - **nothing jumps.** fonts are self-hosted with metric-matched fallbacks, and layout shift measures 0 on load and while you use it.
@@ -107,7 +107,7 @@ lib/
   tip.js              tooltips
 scripts/
   schema.sql          the tables
-  seed-data.js        every release so far
+  seed-data.js        curated revisions so far
 public/
   cloud.svg           the revision cloud
 ```
@@ -115,7 +115,6 @@ public/
 ## known rough edges
 
 - **one admin.** there is one login and no roles; it's my changelog.
-- **the cloud needs a modern browser** to draw itself in. older ones show it already drawn.
 
 <details>
 <summary><strong>more screenshots</strong></summary>
@@ -124,7 +123,7 @@ public/
 
 ![a revision page on desktop: blogspace 2.0, rebuilt as a riso zine rack, with its changes grouped and commits linked, the older and newer revisions below, and the blogspace title block](./docs/screenshots/Redline-5.webp)
 
-![the admin editor: a new tenzies 2.1 revision with a title, an added and a fixed change and a note, and the live preview circled in red](./docs/screenshots/Redline-6.webp)
+![the admin editor: tenzies 2.0.1 with a title, fixed and changed entries, and the live preview circled in red](./docs/screenshots/Redline-6.webp)
 
 <p align="center">
   <img src="./docs/screenshots/Redline-7.webp" width="32%" alt="the register on a phone showing only fixes, with fixed marked in the filter strip">
