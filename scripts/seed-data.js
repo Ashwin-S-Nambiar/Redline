@@ -12,13 +12,14 @@ export const projects = [
     note: note('Redline'),
   },
   {
-    slug: 'blogspace',
-    name: 'BlogSpace',
+    slug: 'inspect',
+    name: 'Inspect',
+    formerly: ['BlogSpace'],
     blurb:
-      'Read short posts by tag, like and comment, and write your own in Markdown, printed like a riso zine and kept on your device.',
-    url: 'https://blogspace.ashwin.co.in',
-    repo: gh('Blogspace'),
-    note: note('BlogSpace'),
+      "Read write-ups on the things I build, with notes that point at screenshots and clips like a browser's inspector.",
+    url: 'https://inspect.ashwin.co.in',
+    repo: gh('Inspect'),
+    note: note('Inspect'),
   },
   {
     slug: 'tenzies',
@@ -149,7 +150,7 @@ export const releases = [
     ],
   },
   {
-    project: 'blogspace',
+    project: 'inspect',
     version: '1.0',
     date: '2024-09-06',
     title: 'The first version',
@@ -422,7 +423,7 @@ export const releases = [
     ],
   },
   {
-    project: 'blogspace',
+    project: 'inspect',
     version: '2.0',
     date: '2026-09-28',
     title: 'Rebuilt as a riso zine rack',
@@ -457,7 +458,26 @@ export const releases = [
     ],
   },
   {
-    project: 'blogspace',
+    project: 'inspect',
+    version: '3.0',
+    date: '2026-09-29',
+    title: 'BlogSpace is now Inspect',
+    commits: ['143872d', '7716643'],
+    changes: [
+      A('Write-ups on the things I build, one post per project or lab.'),
+      A(
+        'Notes that point: the part of a screenshot a note is about gets a selection box.',
+      ),
+      A('Clips with a timeline, and a box that follows what it points at.'),
+      A('Before and after sliders and live demos inside posts.'),
+      A('An RSS feed, and dark mode that follows your system.'),
+      R('The feed of placeholder posts, the writer, likes and comments.'),
+    ],
+    notes:
+      'BlogSpace had no real writing in it. Now it holds the story behind each project.',
+  },
+  {
+    project: 'inspect',
     version: '2.0.1',
     date: '2026-09-28',
     title: 'The shortcuts dialog sits in the middle again',
