@@ -14,17 +14,21 @@ export default async function Home() {
   return (
     <div className="page">
       <main className="min-w-0">
-        <header className="border-b border-graphite px-4 pt-6 pb-5 min-[720px]:pt-8 min-[720px]:pr-6 min-[720px]:pb-7 min-[720px]:pl-20">
+        <header className="page-intro border-b border-graphite px-4 pt-6 pb-5 min-[720px]:pt-8 min-[720px]:pr-6 min-[720px]:pb-7 min-[720px]:pl-20">
           <h1 className="letter text-[32px] leading-none min-[720px]:text-[44px]">
             Revisions
           </h1>
           <p className="mt-2.5 max-w-[48ch] text-lead">
-            What changed in everything I build, newest first. What each project
+            Selected changes across my projects, newest first. What each project
             is lives in{' '}
             <a className="link" href="https://notes.ashwin.co.in">
               my notes
             </a>
             ; what changed and when lives here.
+          </p>
+          <p className="mt-2 max-w-[52ch] text-[13px] leading-normal text-lead">
+            Selected product changes from {live.length} projects. Open a project
+            to see the dates covered; its code has the full commit history.
           </p>
         </header>
         <Register releases={releases} repos={repos} />
@@ -34,8 +38,8 @@ export default async function Home() {
         <div className="only-wide grid gap-6 px-5.5 pt-6">
           <p className="text-[13.5px] leading-normal text-lead">
             <b className="font-semibold text-graphite">How to read this.</b>{' '}
-            Each project is a drawing. Every release adds a revision, numbered
-            in its triangle. The newest one is clouded in red.
+            Each project is a drawing. Each entry is a numbered revision. The
+            newest one is clouded in red.
           </p>
           <Legend counts={kindCounts(releases)} />
           <p className="text-xs text-lead">
@@ -46,7 +50,7 @@ export default async function Home() {
         <div className="mt-auto">
           <TitleBlock
             className="home"
-            name="Redline"
+            name="All projects"
             description={DESCRIPTOR}
             cells={[
               { label: 'Drawn by', value: 'Ashwin' },

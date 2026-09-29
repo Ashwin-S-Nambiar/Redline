@@ -35,8 +35,8 @@ export default function Sheet({ open, onClose, title, children }) {
             className="absolute inset-0 bg-graphite/35"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            exit={{ opacity: 0, transition: { duration: 0.18 } }}
-            transition={{ duration: 0.24 }}
+            exit={{ opacity: 0, transition: { duration: 0.16 } }}
+            transition={{ duration: 0.2 }}
             onClick={onClose}
           />
           <motion.div
@@ -50,9 +50,9 @@ export default function Sheet({ open, onClose, title, children }) {
             animate={{ y: 0 }}
             exit={{
               y: '100%',
-              transition: { duration: 0.2, ease: [0.4, 0, 1, 1] },
+              transition: { duration: 0.16, ease: [0.4, 0, 1, 1] },
             }}
-            transition={{ duration: 0.36, ease: drawer }}
+            transition={{ duration: 0.26, ease: drawer }}
             drag="y"
             dragListener={false}
             dragControls={controls}

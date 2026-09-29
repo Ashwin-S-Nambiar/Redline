@@ -1,5 +1,5 @@
+import Image from 'next/image';
 import Link from 'next/link';
-import Delta from '@/components/Delta';
 import { logout } from '../actions';
 import AdminNav from './AdminNav';
 
@@ -9,7 +9,7 @@ export default function PanelLayout({ children }) {
       <div className="min-h-[calc(100dvh-40px)] border-graphite bg-film min-[720px]:border-2">
         <header className="sticky top-0 z-20 flex flex-wrap items-center gap-x-4 gap-y-2 border-b-[1.5px] border-graphite bg-film px-4 py-2.5">
           <Link href="/admin" className="flex items-center gap-2">
-            <Delta size={20} className="text-redline" />
+            <Image src="/icon.svg" alt="" width={28} height={28} unoptimized />
             <span className="letter text-[21px] leading-none">Redline</span>
             <span className="caption ml-1">Admin</span>
           </Link>

@@ -3,8 +3,8 @@
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { useEffect, useState, useTransition } from 'react';
-import Delta from '@/components/Delta';
 import { Plus, Trash } from '@/components/Icons';
+import RevisionMark from '@/components/RevisionMark';
 import { formatDate, releasePath } from '@/lib/format';
 import { toast } from '@/lib/toast';
 import { deleteRelease, restoreRelease } from '../actions';
@@ -86,7 +86,7 @@ export default function ReleaseList({ releases, projects }) {
             key={r.id}
             className="grid grid-cols-[40px_minmax(0,1fr)_auto] items-center gap-3 border-b border-(--rule) px-4 py-2.5 min-[720px]:grid-cols-[40px_140px_64px_minmax(0,1fr)_110px_auto]"
           >
-            <Delta n={r.rev} size={26} />
+            <RevisionMark n={r.rev} size={26} />
             <span className="letter hidden text-[13px] text-lead min-[720px]:block">
               {r.name}
             </span>

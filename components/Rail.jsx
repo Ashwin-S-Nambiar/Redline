@@ -1,8 +1,8 @@
 'use client';
 
+import Image from 'next/image';
 import Link from 'next/link';
 import { useSelectedLayoutSegment } from 'next/navigation';
-import Delta from './Delta';
 import Drawings from './Drawings';
 import Follow from './Follow';
 
@@ -13,13 +13,12 @@ export default function Rail({ projects, total }) {
     <nav className="rail" aria-label="Projects">
       <Link
         href="/"
-        className="flex items-center gap-2.5 border-b border-graphite px-[22px] pt-5 pb-4"
+        className="flex min-h-[68px] items-center gap-2 border-b border-graphite px-[18px]"
       >
-        <Delta size={24} className="text-redline" />
-        <span className="letter text-[26px] leading-none">Redline</span>
+        <Image src="/icon.svg" alt="" width={34} height={34} unoptimized />
+        <span className="letter text-[24px] leading-none">Redline</span>
       </Link>
-      <div className="grid gap-3 px-[22px] pt-5">
-        <h2 className="caption">Drawing list</h2>
+      <div className="px-[22px] pt-5">
         <Drawings projects={projects} total={total} />
       </div>
       <div className="mt-auto px-[22px] pt-8 pb-5">

@@ -3,11 +3,11 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { ViewTransition } from 'react';
 import CopyLink from '@/components/CopyLink';
-import Delta from '@/components/Delta';
 import Footer from '@/components/Footer';
 import { Back } from '@/components/Icons';
 import Keys from '@/components/Keys';
 import ProjectLinks from '@/components/ProjectLinks';
+import RevisionMark from '@/components/RevisionMark';
 import TitleBlock from '@/components/TitleBlock';
 import { getAll, getRelease } from '@/lib/data';
 import {
@@ -18,6 +18,7 @@ import {
   releasePath,
 } from '@/lib/format';
 import { projectCells } from '@/lib/project-cells';
+import { projectIcon } from '@/lib/project-icons';
 
 export async function generateStaticParams() {
   const { releases } = await getAll();
@@ -75,8 +76,12 @@ export default async function ReleasePage({ params }) {
   return (
     <div className="page">
       <main className="min-w-0">
-        <div className="flex items-center justify-between gap-3 border-b border-graphite px-2 py-2 min-[720px]:pl-17">
-          <Link href={`/${slug}`} className="btn quiet">
+        <div className="flex items-center justify-between gap-3 border-b border-graphite px-2 py-2">
+          <Link
+            href={`/${slug}`}
+            className="btn quiet"
+            aria-label={`Back to ${project.name}`}
+          >
             <Back size={16} />
             {project.name}
           </Link>
@@ -90,16 +95,12 @@ export default async function ReleasePage({ params }) {
                 share="morph"
                 default="none"
               >
-                <Delta
-                  n={r.rev}
-                  size={40}
-                  className={isLatest ? 'text-redline' : ''}
-                />
+                <RevisionMark n={r.rev} size={40} />
               </ViewTransition>
             </div>
             <div className="min-w-0 min-[720px]:px-4">
               <p className="flex flex-wrap items-baseline gap-x-2.5">
-                <span className="letter text-[13px] tracking-widest text-lead">
+                <span className="letter text-[13px] text-lead">
                   {project.name}
                 </span>
                 <span className="mono text-[13px] font-semibold">
@@ -193,7 +194,11 @@ export default async function ReleasePage({ params }) {
           <ProjectLinks project={project} />
         </div>
         <div className="mt-auto">
-          <TitleBlock name={project.name} cells={projectCells(project)} />
+          <TitleBlock
+            name={project.name}
+            icon={projectIcon(project.slug)}
+            cells={projectCells(project)}
+          />
         </div>
       </aside>
       <Keys up={`/${slug}`} />

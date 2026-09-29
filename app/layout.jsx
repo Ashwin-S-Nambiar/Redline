@@ -5,7 +5,7 @@ import { atkinson, azeret, osifont } from './fonts';
 
 const title = `${NAME} · ${DESCRIPTOR}`;
 const description =
-  'Every release of every project Ashwin builds, newest first, with what was added, changed, fixed and removed.';
+  'Selected changes across Ashwin’s projects, newest first, with what was added, changed, fixed and removed.';
 
 export const metadata = {
   metadataBase: new URL(SITE),
