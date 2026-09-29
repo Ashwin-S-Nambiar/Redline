@@ -3,6 +3,12 @@ const nextConfig = {
   async redirects() {
     return [
       { source: '/blogs/:id', destination: '/', permanent: true },
+      { source: '/blogspace', destination: '/inspect', permanent: true },
+      {
+        source: '/blogspace/:path*',
+        destination: '/inspect/:path*',
+        permanent: true,
+      },
       {
         source: '/admin/addProduct',
         destination: '/admin/new',
