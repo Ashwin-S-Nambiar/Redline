@@ -478,6 +478,18 @@ export const releases = [
   },
   {
     project: 'inspect',
+    version: '3.0.1',
+    date: '2026-09-30',
+    title: 'The footer stays at the bottom',
+    commits: ['f8c74b3'],
+    changes: [
+      F(
+        'On short pages like the 404, the footer floated up under the text. It sits at the bottom of the screen now.',
+      ),
+    ],
+  },
+  {
+    project: 'inspect',
     version: '2.0.1',
     date: '2026-09-28',
     title: 'The shortcuts dialog sits in the middle again',
