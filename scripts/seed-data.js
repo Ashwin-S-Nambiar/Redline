@@ -83,7 +83,7 @@ export const projects = [
     slug: 'quizzme',
     name: 'QuizzMe',
     blurb:
-      'Quick trivia rounds on 24 topics, with streaks, results and a replay of what you missed.',
+      'Trivia on 24 topics dealt as cards, with streaks, a scorecard and a replay of misses.',
     url: 'https://quizzme.ashwin.co.in',
     repo: gh('QuizzMe'),
     note: note('QuizzMe'),
@@ -485,6 +485,54 @@ export const releases = [
     changes: [
       F(
         'On short pages like the 404, the footer floated up under the text. It sits at the bottom of the screen now.',
+      ),
+    ],
+  },
+  {
+    project: 'quizzme',
+    version: '3.0',
+    date: '2026-09-29',
+    title: 'Dealt as a deck of cards',
+    commits: ['5a3f7e1', '6b28158', '54612c1'],
+    changes: [
+      A(
+        'Cards dealt one at a time off a visible deck, and thrown aside when you move on.',
+      ),
+      A(
+        'A banner along the bottom that turns green or red, with the right answer in it.',
+      ),
+      A(
+        'A scorecard with the verdict stamped on and a strip of every card, right or wrong.',
+      ),
+      A(
+        "A line under the deal button that counts down Open Trivia DB's wait, with a cancel.",
+      ),
+      C(
+        'A new look: trivia cards on warm paper, printed topic colors, and buttons that sink into their own edge.',
+      ),
+      C(
+        'New type in Gabarito and Instrument Sans, and new sounds: knocks, card riffles and a marimba chime.',
+      ),
+      R('The draggable stickers, the loading screen and the confetti.'),
+    ],
+    notes:
+      'The first rebuild fixed how a round plays. This one makes it look like the game it is.',
+  },
+  {
+    project: 'portfolio',
+    version: '3.1.1',
+    date: '2026-09-30',
+    title: 'QuizzMe, dealt as cards',
+    commits: ['0482b9b', '08b49f2', 'fa69338', '020fb1f'],
+    changes: [
+      C(
+        "QuizzMe's page follows its card deck redesign, with a new clip, screenshots and story.",
+      ),
+      A(
+        "A closer look at QuizzMe's feedback banner, which never changes height.",
+      ),
+      C(
+        "The Arc Reel, Cursor Preview, Expand Card and Liquid Glass labs show QuizzMe's new cover.",
       ),
     ],
   },
