@@ -1,6 +1,8 @@
 import { getAll } from '@/lib/data';
 import { releasePath, SITE } from '@/lib/format';
 
+export const revalidate = 60;
+
 export default async function sitemap() {
   const { projects, releases } = await getAll();
   return [
