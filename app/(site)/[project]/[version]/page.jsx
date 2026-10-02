@@ -25,17 +25,30 @@ export async function generateStaticParams() {
   return releases.map((r) => ({ project: r.project, version: r.version }));
 }
 
-export async function generateMetadata({ params }) {
+export async function generateMetadata({ params }, parent) {
   const { project, version } = await params;
   const found = await getRelease(project, decodeURIComponent(version));
   if (!found) return { title: 'Not found' };
   const { release: r } = found;
+  const inherited = await parent;
+  const description = `${r.title}. ${r.changes
+    .slice(0, 3)
+    .map((c) => c.text)
+    .join(' ')}`.slice(0, 200);
   return {
     title: `${r.name} ${r.version}`,
-    description: `${r.title}. ${r.changes
-      .slice(0, 3)
-      .map((c) => c.text)
-      .join(' ')}`.slice(0, 200),
+    description,
+    openGraph: {
+      ...inherited.openGraph,
+      title: `${r.name} ${r.version} · Redline`,
+      description,
+      url: releasePath(r),
+    },
+    twitter: {
+      ...inherited.twitter,
+      title: `${r.name} ${r.version} · Redline`,
+      description,
+    },
     alternates: { canonical: releasePath(r) },
   };
 }

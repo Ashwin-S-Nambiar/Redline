@@ -16,14 +16,27 @@ export async function generateStaticParams() {
   return projects.map((p) => ({ project: p.slug }));
 }
 
-export async function generateMetadata({ params }) {
+export async function generateMetadata({ params }, parent) {
   const { project: slug } = await params;
   const found = await getProject(slug);
   if (!found) return { title: 'Not found' };
   const { project } = found;
+  const inherited = await parent;
+  const description = `Selected revisions of ${project.name}, with what was added, changed, fixed and removed.`;
   return {
     title: project.name,
-    description: `Selected revisions of ${project.name}, with what was added, changed, fixed and removed.`,
+    description,
+    openGraph: {
+      ...inherited.openGraph,
+      title: `${project.name} · Redline`,
+      description,
+      url: `/${slug}`,
+    },
+    twitter: {
+      ...inherited.twitter,
+      title: `${project.name} · Redline`,
+      description,
+    },
     alternates: {
       canonical: `/${slug}`,
       types: {
