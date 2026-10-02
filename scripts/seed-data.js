@@ -411,6 +411,40 @@ export const releases = [
     changes: [C('React Router 8, Vite 8.3 and the latest Tabler icons.')],
   },
   {
+    project: 'movievault',
+    version: '2.1.2',
+    date: '2026-09-30',
+    title: 'A proper not-found page',
+    commits: ['469f77a', '8b41671'],
+    changes: [
+      F(
+        'Unknown links return a 404 status, with the site footer and Not found as the page title.',
+      ),
+    ],
+  },
+  {
+    project: 'movievault',
+    version: '2.2',
+    date: '2026-10-02',
+    title: 'Fewer requests, a tighter TMDB proxy',
+    commits: ['baea6e6'],
+    changes: [
+      C(
+        'The TMDB proxy accepts only the read requests the app uses, checks their parameters and keeps the API key on the server.',
+      ),
+      C(
+        'Provider and genre lists stay cached longer than details, search and trending results, so repeated requests can reuse them.',
+      ),
+      C(
+        'Service lists are shared and remembered for a day. Genre filters load when needed, and title data already fetched is reused.',
+      ),
+      R('The unused trending request when opening a title directly.'),
+      A(
+        'An eight-second limit on TMDB requests, with error responses kept out of the cache.',
+      ),
+    ],
+  },
+  {
     project: 'portfolio',
     version: '3.1',
     date: '2026-09-28',
