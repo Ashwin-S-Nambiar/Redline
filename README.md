@@ -91,6 +91,10 @@ npm run dev
 
 open http://localhost:3000, and http://localhost:3000/admin to write. `npm run check` runs biome. set `GITHUB_TOKEN` too if you draft from github often, since github limits unsigned requests to 60 an hour.
 
+### hosting and indexing
+
+production indexing is configured for `redline.ashwin.co.in`; vercel sends `noindex, nofollow` on other hosts, including preview deployments. the sitemap includes the home page, projects with recorded revisions and every revision page. admin and not-found pages are marked `noindex`. if you deploy under another domain, update the indexing headers and site urls along with it.
+
 ## the shape of it
 
 ```
