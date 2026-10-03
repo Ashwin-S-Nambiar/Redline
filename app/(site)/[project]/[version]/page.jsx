@@ -17,6 +17,7 @@ import {
   KIND_LABEL,
   releasePath,
 } from '@/lib/format';
+import { cardMetadata } from '@/lib/og';
 import { projectCells } from '@/lib/project-cells';
 import { projectIcon } from '@/lib/project-icons';
 
@@ -29,8 +30,9 @@ export async function generateMetadata({ params }, parent) {
   const { project, version } = await params;
   const found = await getRelease(project, decodeURIComponent(version));
   if (!found) return { title: 'Not found' };
-  const { release: r } = found;
+  const { project: owner, release: r } = found;
   const inherited = await parent;
+  const image = cardMetadata(owner, r);
   const description = `${r.title}. ${r.changes
     .slice(0, 3)
     .map((c) => c.text)
@@ -40,12 +42,14 @@ export async function generateMetadata({ params }, parent) {
     description,
     openGraph: {
       ...inherited.openGraph,
+      images: [image],
       title: `${r.name} ${r.version} · Redline`,
       description,
       url: releasePath(r),
     },
     twitter: {
       ...inherited.twitter,
+      images: [image.url],
       title: `${r.name} ${r.version} · Redline`,
       description,
     },

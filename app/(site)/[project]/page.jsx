@@ -8,6 +8,7 @@ import TitleBlock from '@/components/TitleBlock';
 import { kindCounts } from '@/lib/counts';
 import { getAll, getProject } from '@/lib/data';
 import { formatDate } from '@/lib/format';
+import { cardMetadata } from '@/lib/og';
 import { projectCells } from '@/lib/project-cells';
 import { projectIcon } from '@/lib/project-icons';
 
@@ -22,18 +23,21 @@ export async function generateMetadata({ params }, parent) {
   if (!found) return { title: 'Not found' };
   const { project } = found;
   const inherited = await parent;
+  const image = cardMetadata(project);
   const description = `Selected revisions of ${project.name}, with what was added, changed, fixed and removed.`;
   return {
     title: project.name,
     description,
     openGraph: {
       ...inherited.openGraph,
+      images: [image],
       title: `${project.name} · Redline`,
       description,
       url: `/${slug}`,
     },
     twitter: {
       ...inherited.twitter,
+      images: [image.url],
       title: `${project.name} · Redline`,
       description,
     },

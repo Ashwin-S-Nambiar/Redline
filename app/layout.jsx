@@ -28,9 +28,10 @@ export const metadata = {
     url: SITE,
     images: [
       {
-        url: '/og.jpg',
+        url: '/og.jpg?v=3',
         width: 1200,
         height: 630,
+        type: 'image/jpeg',
         alt: 'The Redline register of revisions',
       },
     ],
@@ -39,7 +40,7 @@ export const metadata = {
     card: 'summary_large_image',
     title,
     description,
-    images: ['/og.jpg'],
+    images: ['/og.jpg?v=3'],
   },
   icons: {
     icon: [
