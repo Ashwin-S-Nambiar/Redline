@@ -28,7 +28,7 @@ export const metadata = {
     url: SITE,
     images: [
       {
-        url: '/og.jpg?v=3',
+        url: '/og.jpg?v=4',
         width: 1200,
         height: 630,
         type: 'image/jpeg',
@@ -40,7 +40,7 @@ export const metadata = {
     card: 'summary_large_image',
     title,
     description,
-    images: ['/og.jpg?v=3'],
+    images: ['/og.jpg?v=4'],
   },
   icons: {
     icon: [

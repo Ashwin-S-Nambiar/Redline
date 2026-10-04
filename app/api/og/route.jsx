@@ -23,7 +23,7 @@ export async function GET(request) {
     return new Response(null, {
       status: 307,
       headers: {
-        Location: new URL('/og.jpg?v=3', url.origin).href,
+        Location: new URL('/og.jpg?v=4', url.origin).href,
         'Cache-Control': 'no-store',
       },
     });
