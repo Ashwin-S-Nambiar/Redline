@@ -125,7 +125,7 @@ public/
 
 <br>
 
-![a revision page on desktop: blogspace 2.0, rebuilt as a riso zine rack, with its changes grouped and commits linked, the older and newer revisions below, and the blogspace title block](./docs/screenshots/Redline-5.webp)
+![a revision page on desktop: inspect 3.0, blogspace is now inspect, with its changes grouped and commits linked, older and newer revisions below, and the inspect title block](./docs/screenshots/Redline-5.webp)
 
 ![the admin editor: tenzies 2.0.1 with a title, fixed and changed entries, and the live preview circled in red](./docs/screenshots/Redline-6.webp)
 
