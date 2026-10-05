@@ -19,10 +19,10 @@ export default async function Home() {
             Revisions
           </h1>
           <p className="mt-2.5 max-w-[48ch] text-lead">
-            Selected changes across my projects, newest first. What each project
-            is lives in{' '}
-            <a className="link" href="https://notes.ashwin.co.in">
-              my notes
+            Selected changes across my projects, newest first. The story of each
+            project lives in{' '}
+            <a className="link" href="https://inspect.ashwin.co.in">
+              my write-ups
             </a>
             ; what changed and when lives here.
           </p>

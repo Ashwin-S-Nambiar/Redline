@@ -1,4 +1,4 @@
-const note = (name) => `https://notes.ashwin.co.in/projects/${name}`;
+const note = (name) => `https://inspect.ashwin.co.in/projects/${name.toLowerCase()}/`;
 const gh = (name) => `Ashwin-S-Nambiar/${name}`;
 
 export const projects = [
