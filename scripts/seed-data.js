@@ -95,7 +95,7 @@ export const projects = [
       'Where all of this is collected, with a page and a write-up for every project.',
     url: 'https://ashwin.co.in',
     repo: gh('portfolio'),
-    note: '',
+    note: note('portfolio'),
   },
 ].map((p, order) => ({ formerly: [], ...p, order }));
 
