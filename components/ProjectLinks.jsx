@@ -7,7 +7,7 @@ export default function ProjectLinks({ project, className = '' }) {
       href: `https://github.com/${project.repo}`,
       label: 'Code',
     },
-    project.note && { href: project.note, label: 'Notes' },
+    project.note && { href: project.note, label: 'Write-up' },
   ].filter(Boolean);
   if (!links.length) return null;
   return (

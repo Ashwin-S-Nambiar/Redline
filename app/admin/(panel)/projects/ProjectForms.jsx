@@ -125,7 +125,7 @@ function ProjectForm({ project, onDone }) {
           />
         </label>
         <label className="field">
-          <span className="caption">Note</span>
+          <span className="caption">Write-up</span>
           <input
             className="input text-sm"
             type="url"
