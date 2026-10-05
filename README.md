@@ -18,7 +18,7 @@
 
 the source of **[redline.ashwin.co.in](https://redline.ashwin.co.in)**, a changelog of selected changes across my projects, newest first, with what was added, changed, fixed and removed. each project page shows how many revisions are recorded and the dates they cover; github has the full commit history.
 
-this used to be quillify, a blog. blogspace, now inspect, is also a blog, and two was one too many, so this one became the place that keeps track of the rest. what each project is lives in [my notes](https://notes.ashwin.co.in); what changed and when lives here.
+this used to be quillify, a blog. blogspace, now inspect, is also a blog, and two was one too many, so this one became the place that keeps track of the rest. the story of each project lives in [my write-ups](https://inspect.ashwin.co.in); what changed and when lives here.
 
 ## what it does
 
@@ -139,4 +139,4 @@ public/
 
 ---
 
-[redline.ashwin.co.in](https://redline.ashwin.co.in) · [ashwin.co.in](https://ashwin.co.in) · [notes](https://notes.ashwin.co.in) · [x](https://x.com/ashwinnambiar11) · [github](https://github.com/Ashwin-S-Nambiar)
+[redline.ashwin.co.in](https://redline.ashwin.co.in) · [ashwin.co.in](https://ashwin.co.in) · [notes](https://inspect.ashwin.co.in) · [x](https://x.com/ashwinnambiar11) · [github](https://github.com/Ashwin-S-Nambiar)
