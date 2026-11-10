@@ -52,17 +52,17 @@ the page is an engineering drawing.
 
 ## the stack
 
-| layer | choices |
-| --- | --- |
-| app | [next.js 16](https://nextjs.org) and [react 19](https://react.dev) |
-| data | [neon](https://neon.com) postgres, over its serverless driver |
-| style | [tailwind css 4](https://tailwindcss.com) |
-| motion | [motion](https://motion.dev) for sheets and toasts, view transitions between pages |
-| auth | [jose](https://github.com/panva/jose) and [bcryptjs](https://github.com/dcodeIO/bcrypt.js) for the admin |
-| notes | [marked](https://marked.js.org) |
-| type | [osifont](https://github.com/hikikomori82/osifont), [atkinson hyperlegible next](https://www.brailleinstitute.org/freefont/) and [azeret mono](https://github.com/displaay/azeret), self-hosted |
-| lint and format | [biome](https://biomejs.dev) |
-| hosting | [vercel](https://vercel.com/) |
+| layer           | choices                                                                                                                                                                                         |
+| --------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| app             | [next.js 16](https://nextjs.org) and [react 19](https://react.dev)                                                                                                                              |
+| data            | [neon](https://neon.com) postgres, over its serverless driver                                                                                                                                   |
+| style           | [tailwind css 4](https://tailwindcss.com)                                                                                                                                                       |
+| motion          | [motion](https://motion.dev) for sheets and toasts, view transitions between pages                                                                                                              |
+| auth            | [jose](https://github.com/panva/jose) and [bcryptjs](https://github.com/dcodeIO/bcrypt.js) for the admin                                                                                        |
+| notes           | [marked](https://marked.js.org)                                                                                                                                                                 |
+| type            | [osifont](https://github.com/hikikomori82/osifont), [atkinson hyperlegible next](https://www.brailleinstitute.org/freefont/) and [azeret mono](https://github.com/displaay/azeret), self-hosted |
+| lint and format | [biome](https://biomejs.dev)                                                                                                                                                                    |
+| hosting         | [vercel](https://vercel.com/)                                                                                                                                                                   |
 
 ## running it
 
